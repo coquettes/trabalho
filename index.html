@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Matérias</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f1f1f1;
+      min-width: 200px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+    .dropdown-content button {
+      background-color: white;
+      border: none;
+      width: 100%;
+      padding: 10px;
+      text-align: left;
+      cursor: pointer;
+    }
+    .dropdown-content button:hover {
+      background-color: #ddd;
+    }
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+    #conteudo {
+      margin-top: 20px;
+      max-width: 700px;
+    }
+    h3 {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Colégio: Colégio Estadual do P</h1>
+
+  <div class="dropdown">
+    <button>Matérias</button>
+    <div class="dropdown-content">
+      <button onclick="mostrarConteudo('fisica')">Física</button>
+      <button onclick="mostrarConteudo('quimica')">Química</button>
+      <button onclick="mostrarConteudo('matematica')">Matemática</button>
+    </div>
+  </div>
+
+  <div id="conteudo"></div>
+
+  <script>
+    function mostrarConteudo(materia) {
+      const conteudo = {
+        fisica: `
+          <h2>Conteúdos de Física</h2>
+          <h3>Eletromagnetismo</h3>
+          <p>Estuda os fenômenos elétricos e magnéticos, como corrente elétrica, circuitos, resistores, campos magnéticos e geração de energia elétrica. Aplica-se em motores, geradores, eletrodomésticos e muito mais.</p>
+
+          <h3>Óptica</h3>
+          <p>Analisa os fenômenos relacionados à luz, como reflexão, refração, espelhos e lentes. Ajuda a entender como funcionam óculos, câmeras, telescópios e o próprio olho humano.</p>
+
+          <h3>Ondulatória</h3>
+          <p>Trata do comportamento das ondas — sonoras, luminosas e eletromagnéticas. Explica fenômenos como eco, interferência, difração e está na base da comunicação por rádio, celular e internet.</p>
+
+          <h3>Física Moderna</h3>
+          <p>Inclui conceitos como teoria da relatividade, física quântica e radioatividade. É usada em tecnologias como energia nuclear, exames médicos (PET, raio-X), chips, lasers e mais.</p>
+        `,
+        quimica: `
+          <h2>Conteúdos de Química</h2>
+          <h3>Química Geral</h3>
+          <p>Estuda as propriedades da matéria, transformações químicas e leis ponderais. Inclui estrutura atômica, tabela periódica e ligações químicas.</p>
+
+          <h3>Físico-Química</h3>
+          <p>Relaciona conceitos da física com a química, como cálculos estequiométricos, leis dos gases, termoquímica, equilíbrio químico e cinética.</p>
+
+          <h3>Química Orgânica</h3>
+          <p>Ramo da química que estuda compostos à base de carbono. Inclui funções orgânicas, isomeria, reações orgânicas e biomoléculas como lipídios e proteínas.</p>
+
+          <h3>Química Ambiental</h3>
+          <p>Aplica os conhecimentos químicos para entender o meio ambiente. Inclui temas como chuva ácida, poluição, tratamento de água e resíduos químicos.</p>
+        `,
+        matematica: `
+          <h2>Conteúdos de Matemática</h2>
+          <h3>Álgebra</h3>
+          <p>Estudo de expressões algébricas, equações, inequações e sistemas lineares. É a base para resolver problemas com letras que representam números desconhecidos.</p>
+
+          <h3>Geometria</h3>
+          <p>Explora formas, tamanhos, ângulos e posições no espaço. Inclui polígonos, circunferência, área, volume e teoremas como o de Pitágoras.</p>
+
+          <h3>Funções</h3>
+          <p>Relaciona grandezas. Estuda-se função do 1º grau, do 2º grau, exponencial, logarítmica e modular. Útil para modelar situações reais como crescimento populacional ou economia.</p>
+
+          <h3>Estatística e Probabilidade</h3>
+          <p>Análise de dados, média, mediana, moda, gráficos e noções de chance (probabilidade). É essencial para interpretar informações e tomar decisões.</p>
+        `
+      };
+
+      document.getElementById('conteudo').innerHTML = conteudo[materia] || '<p>Matéria não encontrada.</p>';
+    }
+  </script>
+
+</body>
+</html>
